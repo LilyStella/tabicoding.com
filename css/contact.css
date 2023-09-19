@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body{
+    background-color:#dae4ff;
+    text-align:center;
+}
+
+div.wrapper{
+    text-align:center;
+    max-width:1000px;
+    margin:0 auto;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    background-color:#dae4ff;
+    font-size:14px;
+    color:#304583;
+}
+
+form div{
+    margin-bottom:14px;
+}
+
+label{
+    margin-bottom:10px;
+    display:block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+    padding:10px;
+}
+
+textarea{
+    width:100%;
+    max-width:480px;
+    height:6rem;
+}
+
+input[type="submit"]{
+    border:none;
+    cursor:pointer;
+    line-height:2;
+    background-color:#304583;
+    color:#dae4ff;
+    width:100px;
+    height:40px;
+    margin:0 auto;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+
+

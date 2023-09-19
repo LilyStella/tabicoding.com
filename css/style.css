@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@import url(sanitize.css);
+
+
+
+html{
+    font-size: 20px;
+}
+
+body{
+    background-color:#dae4ff;
+    padding:10px;
+    font-size:14px;
+    color:#304583;
+}
+
+.lang li{
+    text-align:right;
+    background-color:#b8d2ff;
+    float:left;
+    margin:0px 10px 0px 10px;
+}
+
+header{
+    background-color:#304583;
+    color:#fff;
+}
+
+header h1{
+    font-size:30px;
+    font-weight:normal;
+    text-align:left;
+    padding-left:20px;
+    font-family:serif;
+    text-transform:none;
+    margin:10px 0px 10px 0px;
+    
+}
+
+
+.gnav{
+    max-width:1000px;
+    background-color:#304583;
+    border-left:#b8d2ff;
+    border-right:#b8d2ff;
+    border-top:#b8d2ff;
+}
+
+.gnav_wrapper{
+    max-width: 980px;
+    margin:15px 10px 15px 10px;
+    display: flex;
+}
+.gnav_wrapper li{
+    border-left: #b8d2ff 1px solid;
+    text-align: center;
+    width: 200px;
+    transition: all  0.3s ease;
+}
+.gnav_wrapper li:last-child{
+    border-right: #b8d2ff 1px solid;
+}
+.gnav_wrapper li:hover{
+    background-color:#304583;
+}
+.gnav_wrapper li a{
+    display: block;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #fff;
+    text-decoration: none;
+}
+@media (max-width: 1000px){
+    .gnav_wrapper{
+        position: fixed;
+        display: table;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #304583;
+        visibility: hidden;
+        opacity: 0;
+        padding-top: 20%;
+    }
+    .gnav_wrapper li{
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        border-bottom: #b8d2ff 1px solid;
+        border-left: none;
+    }
+    .gnav_wrapper li:last-child{
+        border-right: none;
+        border-top:#b8d2ff;
+    }
+    .menu-btn{
+        color: #fff;
+        cursor: pointer;
+        z-index: 100;
+        background-color:#304583;
+        max-width: 56px;
+        width: 56px;
+    }
+    .menu-btn i{
+        display: block;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .menu-btn span{
+        display: block;
+        padding: 0 0 10px 0;
+        font-size: 10px;
+        text-align: center;
+    }
+    .open{
+        transition: all .5s;
+        visibility: visible;
+        opacity: 1;
+        z-index: 10;
+    }
+    .menu-btn span::after{
+        content: attr(data-txt-menu);
+    }
+    .open span::after{
+        content: attr(data-txt-close);
+    }
+    
+}
+
+div.container{
+    max-width:1000px;
+    margin:0 auto;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    font-family:YuseiMagic;
+}
+
+.description img{
+    float:right;
+    margin:50px 10px 10px 10px; 
+    text-align:left; 
+}
+
+span.type{
+    background-color:#304582;
+    padding:2px 3px;
+    color:#fff;
+    font-size:6em;
+}
+
+.text{
+    padding:0 0 0 10px;
+    
+}
+
+.text1{
+    padding:0 0 0 10px;
+}
+
+.googlemap{
+    text-align: center;
+}
+
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+.gallery{
+columns: 4;/*段組みの数*/
+padding:0 15px;/*ギャラリー左右に余白をつける*/
+}
+
+.gallery li {
+    margin-bottom: 20px;/*各画像下に余白をつける*/
+}
+
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img{
+  width:100%;
+  height:auto;
+  vertical-align: bottom;/*画像の下にできる余白を削除*/}
+
+/*　横幅900px以下の段組み設定　*/
+@media only screen and (max-width: 900px) {
+  .gallery{
+  columns:3;
+  } 
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery{
+  columns: 2;
+  } 
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  font-size:6vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin:30px 0;
+}
+
+p{
+  margin:0 10px 10px 10px;
+  word-wrap : break-word;
+}
+
+/*画像を出現させるアニメーションCSS*/
+
+.flipLeft{
+animation-name: flipLeft;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+perspective-origin: left center;
+opacity: 0;
+}
+
+@keyframes flipLeft{
+  from {
+   transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+  opacity: 0;
+  }
+
+  to {
+  transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+  }
+}
+
+
